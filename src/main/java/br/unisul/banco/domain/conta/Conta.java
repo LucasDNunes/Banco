@@ -22,7 +22,14 @@ public class Conta implements BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "saldo")
+    private Double saldo;
+
+    @ManyToOne
+    @JoinColumn(name = "agengia_id")
     private Agencia agencia;
 
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 }

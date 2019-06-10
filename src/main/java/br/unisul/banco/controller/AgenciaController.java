@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(name = "/agencias")
+@RequestMapping(value = "/agencias")
 public class AgenciaController extends AbstractController<Agencia, AgenciaDto, Long, AgenciaService> {
 }
