@@ -32,4 +32,12 @@ public class Conta implements BaseEntity {
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
+
+    public void depositar(Double valorDeposito) {
+        saldo += valorDeposito;
+    }
+
+    public void sacar(Double valorSaque) {
+        saldo -= valorSaque;
+    }
 }
