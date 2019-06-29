@@ -8,6 +8,12 @@ import org.springframework.stereotype.Service;
 public class ContaServiceImpl extends AbstractService<Conta, Long, ContaRepository> implements ContaService {
 
     @Override
+    public Conta salvar(Conta entity) {
+        entity.setSaldo(0.00);
+        return super.salvar(entity);
+    }
+
+    @Override
     public Double depositar(final Long idConta, final Double valorDeposito) {
         Conta conta = this.buscarPorId(idConta).orElseThrow(() -> new RegistroNaoEncontradoException(Conta.class.getSimpleName(), idConta));
         conta.depositar(valorDeposito);

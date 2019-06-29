@@ -13,4 +13,5 @@ public class ContaDto extends BaseDto {
     private Long id;
     private AgenciaDto agencia;
     private ClienteDto cliente;
+    private Double saldo;
 }
