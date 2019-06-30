@@ -9,7 +9,6 @@ public class ContaServiceImpl extends AbstractService<Conta, Long, ContaReposito
 
     @Override
     public Conta salvar(Conta entity) {
-        entity.setSaldo(0.00);
         return super.salvar(entity);
     }
 
