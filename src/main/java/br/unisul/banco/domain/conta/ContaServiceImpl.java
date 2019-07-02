@@ -4,11 +4,16 @@ import br.unisul.banco.core.exception.RegistroNaoEncontradoException;
 import br.unisul.banco.core.support.service.AbstractService;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class ContaServiceImpl extends AbstractService<Conta, Long, ContaRepository> implements ContaService {
 
     @Override
     public Conta salvar(Conta entity) {
+        if (Objects.isNull(entity.getSaldo())){
+            entity.setSaldo(0.0);
+        }
         return super.salvar(entity);
     }
 
